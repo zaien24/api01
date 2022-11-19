@@ -12,4 +12,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Log4j2
 public class CustomServletConfig implements WebMvcConfigurer {
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+                .addResourceHandler("/files/**")
+                .addResourceLocations("classpath:/static/");
+    }
+
 }
